@@ -1,10 +1,5 @@
 using UnityEngine;
 
-public interface IPushable
-{
-    public void ForceUp();
-}
-
 public class CollisionPush : MonoBehaviour, IPushable
 {
     [SerializeField] private float _force;

@@ -1,10 +1,5 @@
 using UnityEngine;
 
-public interface IEatable
-{
-    public void Eat();
-}
-
 public class Food : MonoBehaviour, IDetectable
 {
 

@@ -3,12 +3,6 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public interface IDetectable
-{
-    public Transform DetectTransform();
-}
-
-
 
 public class Enemy :BaseSumo
 {
