@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Monosingleton<T>: MonoBehaviour where T:Monosingleton<T>
+public class Monosingleton<T> : MonoBehaviour where T : Monosingleton<T>
 {
     private static volatile T _instance = null;
 
@@ -8,7 +8,7 @@ public class Monosingleton<T>: MonoBehaviour where T:Monosingleton<T>
     {
         get
         {
-            if (_instance==null)
+            if (_instance == null)
             {
                 _instance = FindObjectOfType(typeof(T)) as T;
             }

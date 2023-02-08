@@ -12,7 +12,7 @@ public class Food : MonoBehaviour, IDetectable
     {
         if (collision.gameObject.TryGetComponent(out IEatable eatable))
         {
-           
+
             FoodSpawner.Instance.DeactiveFood(this.gameObject);
             eatable.Eat();
         }

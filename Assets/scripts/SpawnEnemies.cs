@@ -3,20 +3,21 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
-   [SerializeField] private GameObject enemyPrefab;
-   [SerializeField] private int numberOfEnemies;
-   [SerializeField] private Vector3 spawnArea;
-   [SerializeField] private GameObject player;
+    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private int numberOfEnemies;
+    [SerializeField] private Vector3 spawnArea;
+    [SerializeField] private GameObject player;
 
-  
-   [HideInInspector] public GameObject[] enemies;
+
+    [HideInInspector] public GameObject[] enemies;
 
     void Start()
     {
         enemies = new GameObject[numberOfEnemies];
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            Vector3 spawnPoint = new Vector3(Random.Range(-spawnArea.x, spawnArea.x), spawnArea.y, Random.Range(-spawnArea.z, spawnArea.z));
+            Vector3 spawnPoint = new Vector3(Random.Range(-spawnArea.x, spawnArea.x), spawnArea.y,
+                                             Random.Range(-spawnArea.z, spawnArea.z));
             enemies[i] = Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
         }
     }
@@ -41,18 +42,18 @@ public class SpawnEnemies : MonoBehaviour
             GameManager.Instance.WinGame();
             GameManager.Instance.Buttonactive();
             enabled = false;
-            
+
         }
-        else // game managerdan eriş
+        else
         {
-            if (player.transform.position.y<0)
+            if (player.transform.position.y < 0)
             {
                 GameManager.Instance.LoseGame();
                 player.SetActive(false);
-                
+
                 GameManager.Instance.Buttonactive();
             }
         }
     }
-    
+
 }

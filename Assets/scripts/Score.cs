@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    
+
     [SerializeField] private TMP_Text _scoreText;
     private Camera _mainCamera;
-  
+
     [SerializeField] private Transform _canvastTransform;
-    
+
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class Score : MonoBehaviour
     }
     private void LateUpdate()
     {
-        _canvastTransform.LookAt(transform.position+_mainCamera.transform.forward);
+        _canvastTransform.LookAt(transform.position + _mainCamera.transform.forward);
     }
 
 
@@ -26,7 +26,6 @@ public class Score : MonoBehaviour
     {
         _scoreText.text = score.ToString();
     }
-    
-    
+
 
 }

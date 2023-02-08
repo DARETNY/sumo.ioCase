@@ -14,7 +14,7 @@ public class EnemyColPush : MonoBehaviour
 
     private void SetForce()
     {
-        _frontForce = _force *= _enemy.sizeMultiplier; // yemedurumu durumunda score eklenecek
+        _frontForce = _force *= _enemy.sizeMultiplier;
         _backForce = _force /= _enemy.sizeMultiplier;
     }
 
@@ -28,7 +28,7 @@ public class EnemyColPush : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
         {
-          
+
             Vector3 direction = collision.contacts[0].point - transform.position;
             direction = new Vector3(direction.x, 0f, direction.z).normalized;
 

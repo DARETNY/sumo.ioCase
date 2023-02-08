@@ -1,3 +1,4 @@
+using Abstract;
 using UnityEngine;
 
 public class CollisionPush : MonoBehaviour, IPushable
@@ -13,7 +14,7 @@ public class CollisionPush : MonoBehaviour, IPushable
 
     private void SetForce()
     {
-        _frontForce = _force *=_baseSumo.sizeMultiplier; // yemedurumu durumunda score eklenecek
+        _frontForce = _force *=_baseSumo.sizeMultiplier; 
         _backForce = _force /=_baseSumo.sizeMultiplier;
     }
 
